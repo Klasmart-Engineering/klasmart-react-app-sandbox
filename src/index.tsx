@@ -3,12 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
+import { DownloadAudio } from 'kidsloop-audio-player';
+
+const link = createHttpLink({
+  uri: "/audio-storage/graphql",
+  credentials: "include",
+});
+const client = new ApolloClient({
+  link,
+  cache: new InMemoryCache(),
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <ApolloProvider client={client}>
+    <DownloadAudio
+      audioId="54b140c0-7703-4a5d-b0c7-ea59a0c4b4eb"
+      organizationId="org1"
+      roomId="room1"
+    />
+  </ApolloProvider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
