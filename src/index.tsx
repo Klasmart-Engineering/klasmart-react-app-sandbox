@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
-import { DownloadAudio } from 'kidsloop-audio-player';
+import { AudioPlayer } from 'kidsloop-audio-player';
 
 const link = createHttpLink({
   uri: "/audio-storage/graphql",
@@ -17,10 +17,9 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <DownloadAudio
+    <AudioPlayer
       audioId="54b140c0-7703-4a5d-b0c7-ea59a0c4b4eb"
-      organizationId="org1"
-      roomId="room1"
+      mimeType="audio/webm"
     />
   </ApolloProvider>,
   document.getElementById("root")
