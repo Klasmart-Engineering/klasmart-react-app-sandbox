@@ -25,7 +25,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format:check": "prettier --check \"{src,tests}/**/*.{ts,tsx}\" \"*.json\"",
-    "format": "prettier --write \"{src,tests}/**/*.{ts,tsx}\" \"*.json\""
+    "format": "prettier --write \"{src,tests}/**/*.{ts,tsx}\" \"*.json\"",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "proxy": "https://api.alpha.kidsloop.net/",
   "eslintConfig": {
@@ -47,6 +49,12 @@
     ]
   },
   "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.4",
     "prettier": "^2.4.1"
+  },
+  "lint-staged": {
+    "*.json": "prettier --write",
+    "{src,tests}/**/*.{ts,tsx}": "prettier --write"
   }
 }
