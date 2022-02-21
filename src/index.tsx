@@ -1,7 +1,5 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
 import {
   ApolloClient,
@@ -24,6 +22,7 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <AudioPlayer
       audioId="54b140c0-7703-4a5d-b0c7-ea59a0c4b4eb"
+      roomId="my-room-id"
       mimeType="audio/webm"
     />
   </ApolloProvider>,

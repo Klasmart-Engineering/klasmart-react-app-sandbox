@@ -29,7 +29,7 @@
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
-  "proxy": "https://api.alpha.kidsloop.net/",
+  "proxy": "http://localhost:8080/",
   "eslintConfig": {
     "extends": [
       "react-app",
