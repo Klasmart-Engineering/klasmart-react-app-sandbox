@@ -7,7 +7,10 @@ import {
   createHttpLink,
   InMemoryCache,
 } from '@apollo/client'
-import { AudioPlayer } from 'kidsloop-audio-player'
+//import { AudioPlayer } from 'kidsloop-media-ui'
+import { AudioPlayer } from './AudioPlayer'
+// import AudioMetadataList from './AudioMetadataList'
+// import KidsLoopImage from './KidsLoopImage'
 
 const link = createHttpLink({
   uri: '/audio-storage/graphql',
@@ -17,14 +20,29 @@ const client = new ApolloClient({
   link,
   cache: new InMemoryCache(),
 })
+// const client2 = new ApolloClient({
+//   link,
+//   cache: new InMemoryCache(),
+// })
 
 ReactDOM.render(
   <ApolloProvider client={client}>
+    {/* <AudioMetadataList
+    h5pId='6217658d9082755e3a68b56e'
+    roomId='62181812fcb588c47666c0fe'
+    userId='10b74790-9528-45be-b44f-9e341105c1e9'
+    client={client2}
+  /> */}
     <AudioPlayer
-      audioId="54b140c0-7703-4a5d-b0c7-ea59a0c4b4eb"
-      roomId="my-room-id"
+      mediaId="77bdb28a-95ce-4e53-bf73-c71e3b71c177"
+      roomId="623415476c917ae1971875b9"
       mimeType="audio/webm"
     />
+    {/* <KidsLoopImage
+      mediaId="cd08d598-da26-4915-863c-ca95bd962006"
+      roomId="no-room-id"
+      mimeType="image/jpeg"
+    /> */}
   </ApolloProvider>,
   document.getElementById('root'),
 )
