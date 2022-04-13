@@ -1,5 +1,8 @@
 import React from 'react'
-import { MediaMetadataHookInput, useAudioMetadata } from 'kidsloop-media-ui'
+import {
+  MediaMetadataHookInput,
+  useAudioMetadata,
+} from '@kl-engineering/kidsloop-media-hooks'
 
 export const AudioMetadataList = ({
   userId,

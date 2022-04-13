@@ -1,5 +1,8 @@
 import React from 'react'
-import { DownloadMediaHookInput, useDownloadMedia } from 'kidsloop-media-ui'
+import {
+  DownloadMediaHookInput,
+  useDownloadMedia,
+} from '@kl-engineering/kidsloop-media-hooks'
 
 export const KidsLoopImage = ({
   mediaId,

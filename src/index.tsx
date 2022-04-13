@@ -7,13 +7,13 @@ import {
   createHttpLink,
   InMemoryCache,
 } from '@apollo/client'
-//import { AudioPlayer } from 'kidsloop-media-ui'
+//import { AudioPlayer } from '@kl-engineering/kidsloop-media-hooks'
 import { AudioPlayer } from './AudioPlayer'
 // import AudioMetadataList from './AudioMetadataList'
 // import KidsLoopImage from './KidsLoopImage'
 
 const link = createHttpLink({
-  uri: '/audio-storage/graphql',
+  uri: '/media-storage/graphql',
   credentials: 'include',
 })
 const client = new ApolloClient({
